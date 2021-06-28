@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View, Text } from "react-native";
+import TasksList from "./TasksList";
 
 function TaskContainer(props) {
   const [tasks, setTasks] = useState([
@@ -7,7 +8,7 @@ function TaskContainer(props) {
   ]);
   return (
     <View>
-      <Text>{tasks[0].title}</Text>
+      <TasksList tasks={tasks} />
     </View>
   );
 }
