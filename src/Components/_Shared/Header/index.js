@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import moment from "moment";
 
 export default function Header() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>La date</Text>
+      <Text style={styles.title}>{moment().format("dddd, D MMM")}</Text>
     </View>
   );
 }
