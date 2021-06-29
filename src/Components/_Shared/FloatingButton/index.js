@@ -12,7 +12,7 @@ const FloatingButton = () => {
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
-    bottom: 20,
+    top: 540,
     right: 20,
     width: 50,
     height: 50,
