@@ -6,7 +6,7 @@ const CountersContainer = ({ nbTasks, nbTasksCompleted }) => {
   return (
     <View style={styles.container}>
       <Counter nb={nbTasks} title={"Tâches créées"} />
-      <Counter nb={nbTasksCompleted} title={"Tâches terminées"} />
+      <Counter nbTasksCompleted={nbTasksCompleted} title={"Tâches terminées"} />
     </View>
   );
 };

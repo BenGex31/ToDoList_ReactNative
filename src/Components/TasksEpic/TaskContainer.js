@@ -10,6 +10,8 @@ function TaskContainer(props) {
     { id: new Date().getTime(), title: "Nouvelle tâche", completed: false }
   ]);
 
+  const [isFormOpened, setIsFormOpened] = useState(false);
+
   const onAddTask = (title) => {
     const newtask = {
       id: new Date().getTime(),
@@ -55,9 +57,13 @@ function TaskContainer(props) {
     return counter;
   };
 
+  const toggleForm = () => {
+    setIsFormOpened(!isFormOpened);
+  };
+
   return (
     <View style={styles.container}>
-      <TaskForm onAddTask={onAddTask} />
+      {isFormOpened && <TaskForm onAddTask={onAddTask} />}
       <CountersContainer
         nbTasks={tasks.length}
         nbTasksCompleted={() => getTasksCompleted()}
@@ -67,7 +73,7 @@ function TaskContainer(props) {
         onChangeStatus={onChangeStatus}
         onDeletetask={onDeletetask}
       />
-      <FloatingButton />
+      <FloatingButton toggleForm={toggleForm} isFormOpened={isFormOpened} />
     </View>
   );
 }
