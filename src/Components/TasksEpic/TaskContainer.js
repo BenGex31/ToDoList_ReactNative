@@ -5,18 +5,37 @@ import TasksList from "./TasksList";
 
 function TaskContainer(props) {
   const [tasks, setTasks] = useState([
-    { title: "Nouvelle tâche", completed: false }
+    { id: new Date().getTime(), title: "Nouvelle tâche", completed: false }
   ]);
 
   const onAddTask = (title) => {
-    const newtask = { title: title, completed: false };
+    const newtask = {
+      id: new Date().getTime(),
+      title: title,
+      completed: false
+    };
     setTasks([newtask, ...tasks]);
+  };
+
+  const onChangeStatus = (id) => {
+    let newTasks = [];
+    tasks.forEach((task) => {
+      if (task.id === id) {
+        newTasks.push({
+          id: id,
+          title: task.title,
+          completed: !task.completed
+        });
+      }
+      newTasks.push(task);
+    });
+    setTasks(newTasks);
   };
 
   return (
     <View>
       <TaskForm onAddTask={onAddTask} />
-      <TasksList tasks={tasks} />
+      <TasksList tasks={tasks} onChangeStatus={onChangeStatus} />
     </View>
   );
 }

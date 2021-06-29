@@ -1,22 +1,24 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 
-const TaskTile = ({ title }) => {
+const TaskTile = ({ id, title, onChangeStatus }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.subContainer}>
+    <TouchableOpacity onPress={() => onChangeStatus(id)}>
+      <View style={styles.container}>
+        <View style={styles.subContainer}>
+          <Image
+            style={styles.icon}
+            source={require("../../assets/icon_check.png")}
+          />
+          <Text style={styles.title}>{title}</Text>
+        </View>
+
         <Image
           style={styles.icon}
-          source={require("../../assets/icon_check.png")}
+          source={require("../../assets/icon_bin.png")}
         />
-        <Text style={styles.title}>{title}</Text>
       </View>
-
-      <Image
-        style={styles.icon}
-        source={require("../../assets/icon_bin.png")}
-      />
-    </View>
+    </TouchableOpacity>
   );
 };
 const styles = StyleSheet.create({
