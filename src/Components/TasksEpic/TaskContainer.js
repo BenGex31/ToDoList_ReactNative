@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View } from "react-native";
+import CountersContainer from "./CountersContainer";
 import TaskForm from "./taskForm";
 import TasksList from "./TasksList";
 
@@ -43,9 +44,24 @@ function TaskContainer(props) {
     setTasks(newTasks);
   };
 
+  const getTaskCompleted = () => {
+    let counter = 0;
+    tasks.forEach((task) => {
+      if (task.completed) {
+        counter++;
+      }
+    });
+
+    return counter;
+  };
+
   return (
     <View>
       <TaskForm onAddTask={onAddTask} />
+      <CountersContainer
+        nbTasks={tasks.length}
+        nbTasksCompleted={() => getTaskCompleted()}
+      />
       <TasksList
         tasks={tasks}
         onChangeStatus={onChangeStatus}
