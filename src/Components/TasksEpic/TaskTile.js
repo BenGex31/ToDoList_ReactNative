@@ -9,7 +9,7 @@ const TaskTile = ({ title }) => {
           style={styles.icon}
           source={require("../../assets/icon_check.png")}
         />
-        <Text>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
 
       <Image
@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
   subContainer: {
     flexDirection: "row",
     alignItems: "center"
+  },
+  title: {
+    marginLeft: 30
   }
 });
 export default TaskTile;
