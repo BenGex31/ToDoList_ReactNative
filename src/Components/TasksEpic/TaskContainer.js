@@ -33,10 +33,24 @@ function TaskContainer(props) {
     setTasks(newTasks);
   };
 
+  const onDeletetask = (id) => {
+    let newTasks = [];
+    tasks.forEach((task) => {
+      if (task.id !== id) {
+        newTasks.push(task);
+      }
+    });
+    setTasks(newTasks);
+  };
+
   return (
     <View>
       <TaskForm onAddTask={onAddTask} />
-      <TasksList tasks={tasks} onChangeStatus={onChangeStatus} />
+      <TasksList
+        tasks={tasks}
+        onChangeStatus={onChangeStatus}
+        onDeletetask={onDeletetask}
+      />
     </View>
   );
 }
