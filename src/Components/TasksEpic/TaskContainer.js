@@ -7,9 +7,15 @@ function TaskContainer(props) {
   const [tasks, setTasks] = useState([
     { title: "Nouvelle tâche", completed: false }
   ]);
+
+  const onAddTask = (title) => {
+    const newtask = { title: title, completed: false };
+    setTasks([newtask, ...tasks]);
+  };
+
   return (
     <View>
-      <TaskForm />
+      <TaskForm onAddTask={onAddTask} />
       <TasksList tasks={tasks} />
     </View>
   );
