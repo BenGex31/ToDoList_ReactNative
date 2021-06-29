@@ -44,14 +44,13 @@ function TaskContainer(props) {
     setTasks(newTasks);
   };
 
-  const getTaskCompleted = () => {
+  const getTasksCompleted = () => {
     let counter = 0;
     tasks.forEach((task) => {
-      if (task.completed) {
+      if (task.completed === true) {
         counter++;
       }
     });
-
     return counter;
   };
 
@@ -60,7 +59,7 @@ function TaskContainer(props) {
       <TaskForm onAddTask={onAddTask} />
       <CountersContainer
         nbTasks={tasks.length}
-        nbTasksCompleted={() => getTaskCompleted()}
+        nbTasksCompleted={() => getTasksCompleted()}
       />
       <TasksList
         tasks={tasks}
