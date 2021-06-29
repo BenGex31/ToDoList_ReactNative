@@ -6,9 +6,7 @@ import TaskForm from "./taskForm";
 import TasksList from "./TasksList";
 
 function TaskContainer(props) {
-  const [tasks, setTasks] = useState([
-    { id: new Date().getTime(), title: "Nouvelle tâche", completed: false }
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const [isFormOpened, setIsFormOpened] = useState(false);
 

@@ -5,8 +5,12 @@ import Counter from "../_Shared/Counter";
 const CountersContainer = ({ nbTasks, nbTasksCompleted }) => {
   return (
     <View style={styles.container}>
-      <Counter nb={nbTasks} title={"Tâches créées"} />
-      <Counter nbTasksCompleted={nbTasksCompleted} title={"Tâches terminées"} />
+      <View>
+        <Counter nb={nbTasks} title={"Tâches créées"} />
+      </View>
+      <View style={{ textAlign: "right" }}>
+        <Counter nb={nbTasksCompleted()} title={"Tâches terminées"} />
+      </View>
     </View>
   );
 };
