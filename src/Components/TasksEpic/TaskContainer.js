@@ -26,8 +26,9 @@ function TaskContainer(props) {
           title: task.title,
           completed: !task.completed
         });
+      } else {
+        newTasks.push(task);
       }
-      newTasks.push(task);
     });
     setTasks(newTasks);
   };
