@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import FloatingButton from "../_Shared/FloatingButton";
 import CountersContainer from "./CountersContainer";
 import TaskForm from "./taskForm";
@@ -56,7 +56,7 @@ function TaskContainer(props) {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <TaskForm onAddTask={onAddTask} />
       <CountersContainer
         nbTasks={tasks.length}
@@ -71,5 +71,12 @@ function TaskContainer(props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    position: "relative"
+  }
+});
 
 export default TaskContainer;
