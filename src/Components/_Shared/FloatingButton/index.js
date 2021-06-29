@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
-const FloatingButton = ({}) => {
+const FloatingButton = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>+</Text>
