@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View } from "react-native";
+import FloatingButton from "../_Shared/FloatingButton";
 import CountersContainer from "./CountersContainer";
 import TaskForm from "./taskForm";
 import TasksList from "./TasksList";
@@ -66,6 +67,7 @@ function TaskContainer(props) {
         onChangeStatus={onChangeStatus}
         onDeletetask={onDeletetask}
       />
+      <FloatingButton />
     </View>
   );
 }
