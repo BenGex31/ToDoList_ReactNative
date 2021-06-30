@@ -65,6 +65,12 @@ function TaskContainer(props) {
       <CountersContainer
         nbTasks={tasks.length}
         nbTasksCompleted={() => getTasksCompleted()}
+        titleTask={tasks.length > 1 ? "Tâches créées" : "Tâche créée"}
+        titleTaskCompleted={
+          tasks.filter((task) => task.completed === true).length > 1
+            ? "Tâches terminées"
+            : "Tâche terminée"
+        }
       />
       <TasksList
         tasks={tasks}
