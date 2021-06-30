@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 15
+    marginBottom: 15,
+    marginTop: 15
   }
 });
 
