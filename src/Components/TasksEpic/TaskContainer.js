@@ -15,14 +15,14 @@ function TaskContainer(props) {
 
   const [isFormOpened, setIsFormOpened] = useState(false);
 
-  const onAddTask = (title) => {
+  /*const onAddTask = (title) => {
     const newtask = {
       id: new Date().getTime(),
       title: title,
       completed: false
     };
     setTasks([newtask, ...tasks]);
-  };
+  };*/
 
   const onChangeStatus = (id) => {
     let newTasks = [];
