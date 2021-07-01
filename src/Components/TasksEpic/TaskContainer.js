@@ -4,9 +4,14 @@ import FloatingButton from "../_Shared/FloatingButton";
 import CountersContainer from "./CountersContainer";
 import TaskForm from "./taskForm";
 import TasksList from "./TasksList";
+import { useSelector } from "react-redux";
+import { getTasks } from "../../Redux/selector";
 
 function TaskContainer(props) {
   const [tasks, setTasks] = useState([]);
+
+  const allTasks = useSelector(getTasks);
+  console.log("ALL TASKS", allTasks);
 
   const [isFormOpened, setIsFormOpened] = useState(false);
 
