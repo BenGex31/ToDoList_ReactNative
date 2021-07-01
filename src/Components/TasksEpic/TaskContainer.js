@@ -66,7 +66,7 @@ function TaskContainer(props) {
 
   return (
     <View style={styles.container}>
-      {isFormOpened && <TaskForm onAddTask={onAddTask} />}
+      {isFormOpened && <TaskForm />}
       <CountersContainer
         nbTasks={tasks.length}
         nbTasksCompleted={() => getTasksCompleted()}
