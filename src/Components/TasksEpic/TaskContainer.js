@@ -6,6 +6,7 @@ import TaskForm from "./taskForm";
 import TasksList from "./TasksList";
 import { useSelector } from "react-redux";
 import { getTasks } from "../../Redux/selector";
+import Header from "../_Shared/Header/index";
 
 function TaskContainer(props) {
   const [tasks, setTasks] = useState([]);
